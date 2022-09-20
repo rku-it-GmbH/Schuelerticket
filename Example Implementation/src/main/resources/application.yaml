@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: STUDENTTICKETAPI
+  jackson:
+    mapper:
+      accept-case-insensitive-enums: true
+      accept-case-insensitive-properties: true
+      accept-case-insensitive-values: true
+
+spring.main.allow-circular-references: true
+
+
+
+server:
+  port: ${server_port:8080}
+  servlet:
+    context-path: /studentticketapi
+  error:
+    include-stacktrace: NEVER
+    include-message: ALWAYS
+    include-binding-errors: ALWAYS
+    include-exception: FALSE
+  forward-headers-strategy: FRAMEWORK
+  
+
+
+ 
+    
+logging:
+  level:
+    '[org.springframework]': ERROR
+    '[net.rku]': DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%-25.25thread] %-5.5level %-40.40C{40} - %msg%n"
+    file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%-25.25thread] %-5.5level %-40.40C{40} - %msg%n"
+  file: 
+    path: logs
+    name: ${logging.file.path}/${spring.application.name}.log
+    max-size: 10MB
+    max-history: 30
+   
