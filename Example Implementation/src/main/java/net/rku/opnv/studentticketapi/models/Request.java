@@ -21,7 +21,7 @@ public class Request {
 	@Valid
 	@NonNull
 	@Schema(description = "Basisdaten des Antrags")
-	private BasicData basisdaten;
+	private BasicData basicData;
 	
 	@Valid
 	@NonNull

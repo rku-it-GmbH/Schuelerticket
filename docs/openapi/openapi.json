@@ -683,14 +683,14 @@
 			},
 			"Request": {
 				"required": [
-					"basisdaten",
+					"basicData",
 					"consent",
 					"student",
 					"ticketInformation"
 				],
 				"type": "object",
 				"properties": {
-					"basisdaten": {
+					"basicData": {
 						"$ref": "#/components/schemas/BasicData"
 					},
 					"ticketInformation": {
