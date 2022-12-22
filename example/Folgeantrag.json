@@ -1,0 +1,114 @@
+{
+	"basisdaten": {
+		"requestDate": "2022-12-21",
+		"approvalDate": "2022-12-22",
+		"applicant": "Stadt Herne",
+		"requestID": "123456A9",
+		"reductionEntitled": true,
+		"personalContribution": "High",
+		"note": "",
+		"requestType": "Followup"
+	},
+	"ticketInformation": {
+		"acceptTransportTerms": true,
+		"schoolYearStart": "2023-05-21",
+		"schoolYearEnd": "2022-08-01",
+		"subscribtionStart": "2023-05-21",
+		"subscribtionEnd": "2022-08-01",
+		"trafficAssociation": "VRR",
+		"trafficCompany": "HCR",
+		"product": "Schokoticket",
+		"productNumber": "691581",
+		"priceLevel": "A3",
+		"startingStop": "Bochum, Jahrhunderthalle",
+		"viaStop": "Bochum, Jahrhunderthalle",
+		"destinationStop": "Herne, Berliner Platz",
+		"validityAreaSchool": "Wabe 615",
+		"validityAreaPrivate": "Wabe 615",
+		"selectedMedium": "chipcard"
+	},
+	"student": {
+		"lastname": "Müller",
+		"studentID": "12345A99",
+		"firstname": "Marie",
+		"contractNumber": "1233738B2",
+		"birthday": "2017-07-21",
+		"sex": "female",
+		"street": "Cloudstraße",
+		"streetnumber": "22",
+		"postalcode": "44141",
+		"city": "Dortmund",
+		"phonenumber": "0123456789",
+		"emailAdress": "m.mueller@example.com"
+	},
+	"representative": {
+		"lastname": "Müller",
+		"firstname": "Peter",
+		"street": "Cloudstraße",
+		"streetnumber": "22",
+		"postalcode": "44141",
+		"city": "Dortmund"
+	},
+	"paymentDetails": {
+		"bankName": "Sparkasse Herne",
+		"iban": "DEABCDEF123456789",
+		"bic": "WELADED2HER",
+		"payer": {
+			"lastname": "Müller",
+			"firstname": "Peter",
+			"street": "Cloudstraße",
+			"streetnumber": "22",
+			"postalcode": "44141",
+			"city": "Dortmund"
+		},
+		"directDebitConsent": true,
+		"creditCheckConsent": true,
+		"payment": "DirectDebit"
+	},
+	"consent": {
+		"privacyPolicy": true,
+		"marketing": true,
+		"marketResearch": true,
+		"contactViaPhone": false,
+		"contactViaMail": true,
+		"contactViaEMail": true
+	},
+	"schoolInformation": {
+		"school": {
+			"id": 61854,
+			"name": "ABC Grundschule",
+			"schoolType": "Grundschule"
+		},
+		"classNumber": "6A",
+		"courseOfEducation": "Ausbildungsklasse Elektrotechnik",
+		"schoolCertificateChecked": true
+	},
+	"siblings": [
+		{
+			"customer": {
+				"lastname": "Müller",
+				"studentID": "12345A99",
+				"firstname": "Max",
+				"birthday": "2017-07-21"
+			},
+			"school": {
+				"id": 61854,
+				"name": "ABC Grundschule",
+				"schoolType": "Grundschule"
+			}
+		},
+		{
+			"customer": {
+				"lastname": "Müller",
+				"studentID": "12345A99",
+				"firstname": "Benjamin",
+				"birthday": "2017-07-21"
+			},
+			"school": {
+				"id": 61854,
+				"name": "ABC Grundschule",
+				"schoolType": "Grundschule"
+			}
+		}
+	]
+}
