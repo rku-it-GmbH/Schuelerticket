@@ -29,7 +29,7 @@ public class SpringDocConfig {
 		License license = new License().name("MIT License").url("https://github.com/rku-it-GmbH/Schuelerticket/blob/main/LICENSE");
 
 		Info info = new Info().title("Schülerticket API")
-				.description("Schülerticket Schnittstelle zwischen Schulträger und VU in NRW").version("v0.6.0")
+				.description("Schülerticket Schnittstelle zwischen Schulträger und VU in NRW").version("v0.7.3")
 				.contact(contact).license(license);
 
 		List<Server> servers = Arrays.asList(
