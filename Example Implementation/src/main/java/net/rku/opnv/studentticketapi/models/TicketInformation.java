@@ -2,10 +2,9 @@ package net.rku.opnv.studentticketapi.models;
 
 import java.time.LocalDate;
 
-import javax.validation.constraints.Future;
-
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.validation.constraints.Future;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -18,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class TicketInformation {
 	
 	 
-	@NonNull
+	@Nonnull
 	@Future
 	@Schema(description = "Abo-Beginn", example = "2023-05-21")
 	private LocalDate subscribtionStart;
@@ -29,7 +28,7 @@ public class TicketInformation {
 	private LocalDate subscribtionEnd;
 	
 	
-	@NonNull
+	@Nonnull
 	@Schema(description = "Verkehrsverbund", example = "AVV")
 	private String trafficAssociation;
 	
@@ -38,11 +37,11 @@ public class TicketInformation {
 	@Schema(description = "Verkehrsunternehmen", example = "BOGESTRA")
 	private String trafficCompany;
 	
-	@NonNull
+	@Nonnull
 	@Schema(description = "Produkt", example = "Schokoticket")
 	private String product;
 	
-	@NonNull
+	@Nonnull
 	@Schema(description = "Produktnummer", example = "691581")
 	private long productNumber;
 	

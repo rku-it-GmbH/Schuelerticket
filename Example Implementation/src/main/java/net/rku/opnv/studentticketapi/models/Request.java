@@ -2,10 +2,9 @@ package net.rku.opnv.studentticketapi.models;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.validation.Valid;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -19,18 +18,18 @@ import lombok.NoArgsConstructor;
 public class Request {
 
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "Basisdaten des Antrags")
 	private BasicData basicData;
 	
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "Informationen zum Ticket")
 	private TicketInformation ticketInformation;
 
 
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "Dieses Element enthält die Daten zum Kunden (Schüler/Abonnent)")
 	private Contact student;
 
@@ -46,19 +45,19 @@ public class Request {
 	
 	
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "Verschiedene Einwilligungen")
 	private Consent consent;
 
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "In diesem Element werden die Daten zur aufnehmenden und ggf. zur alten Schule überge-ben")
 	private SchoolInformation schoolInformation;
 
 
 
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "Angaben von Geschwisterkindern zur Festlegung des Eigenanteils."
 			+ " Dieser Datensatz entfällt, wenn keine Geschwisterbeziehungen angegeben wurden. Dann wird ein leeres Array erwartet.")
 	private List<Sibling> siblings;

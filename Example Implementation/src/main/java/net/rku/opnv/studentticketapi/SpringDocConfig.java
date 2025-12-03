@@ -4,12 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import org.springdoc.core.GroupedOpenApi;
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.header.writers.XXssProtectionHeaderWriter;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
@@ -33,7 +35,7 @@ public class SpringDocConfig {
 				.contact(contact).license(license);
 
 		List<Server> servers = Arrays.asList(
-				new Server().url("https://localhost:8080/studentticketapi").description("localhost"));
+				new Server().url("http://localhost:8080/studentticketapi").description("localhost"));
 
 		return new OpenAPI().info(info).servers(servers);
 
@@ -44,20 +46,19 @@ public class SpringDocConfig {
 		return GroupedOpenApi.builder().group("studentticketapi").pathsToMatch("/api/**").build();
 	}
 
-	@Configuration
-	public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-		@Override
-		protected void configure(HttpSecurity http) throws Exception {
-			http.authorizeRequests().antMatchers(HttpMethod.POST, "*").permitAll();
-			http.authorizeRequests().anyRequest().permitAll();
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		http.csrf(AbstractHttpConfigurer::disable)
+				.cors(AbstractHttpConfigurer::disable)
 
-			http.csrf().disable();
-			http.cors().disable();
-			
-			http.headers().xssProtection().and().contentSecurityPolicy(
-					"default-src 'self';img-src data: https:;object-src 'none'; script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';");
+				.authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.POST, "/*").permitAll()
+						.anyRequest().permitAll())
 
-		}
+				.headers(headers -> headers
+						.xssProtection(xss -> xss.headerValue(XXssProtectionHeaderWriter.HeaderValue.ENABLED_MODE_BLOCK))
+						.contentSecurityPolicy(
+								csp -> csp.policyDirectives("default-src 'self';img-src data: https:;object-src 'none'; script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';")));
 
+		return http.build();
 	}
 }

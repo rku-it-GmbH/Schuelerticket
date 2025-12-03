@@ -1,8 +1,9 @@
 package net.rku.opnv.studentticketapi.models;
 
-import org.springframework.lang.NonNull;
+
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.annotation.Nonnull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,20 +14,20 @@ import lombok.NoArgsConstructor;
 @Schema(description = "Zustimmungen einer Person.")
 public class Consent {
 
-	@NonNull
+	@Nonnull
 	private boolean privacyPolicy;
 
-	@NonNull
+	@Nonnull
 	private boolean marketing;
 
-	@NonNull
+	@Nonnull
 	private boolean marketResearch;
 	
-	@NonNull
+	@Nonnull
 	private boolean contactViaPhone;
 	
 	
-	@NonNull
+	@Nonnull
 	private boolean contactViaMail;
 
 }

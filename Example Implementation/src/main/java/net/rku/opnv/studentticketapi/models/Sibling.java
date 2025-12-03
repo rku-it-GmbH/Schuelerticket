@@ -1,8 +1,7 @@
 package net.rku.opnv.studentticketapi.models;
 
-import javax.validation.Valid;
-
-import org.springframework.lang.NonNull;
+import jakarta.annotation.Nonnull;
+import jakarta.validation.Valid;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,11 +13,11 @@ import lombok.NoArgsConstructor;
 public class Sibling {
 	
 	@Valid
-	@NonNull
+	@Nonnull
 	private Contact customer;
 	
 	@Valid
-	@NonNull
+	@Nonnull
 	private School school;
 
 }

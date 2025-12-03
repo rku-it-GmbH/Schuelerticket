@@ -1,11 +1,10 @@
 package net.rku.opnv.studentticketapi.models;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -25,11 +24,11 @@ public class SchoolInformation {
 	private School oldSchool;
 	
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "Aktuelle/aufnehmende Schule")
 	private School school;
 	
-	@NonNull
+	@Nonnull
 	@NotBlank
 	@Size(max=6)
 	@Schema(description = "Klasse/Jahrgangsstufe", example = "6A")

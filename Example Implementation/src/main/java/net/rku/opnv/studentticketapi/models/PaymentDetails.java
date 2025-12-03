@@ -1,11 +1,12 @@
 package net.rku.opnv.studentticketapi.models;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
+
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -23,13 +24,13 @@ public class PaymentDetails {
 	@Schema(description = "Name der Bank, nur optionale Angabe zur Kontrolle", maxLength = 64, example = "Sparkasse Herne")
 	private String bankName;
 	
-	@NonNull
+	@Nonnull
 	@NotBlank
 	@Size(min =15, max = 34)
 	@Schema(example = "DEABCDEF123456789", description = "IBAN")
 	private String iban;
 	
-	@NonNull
+	@Nonnull
 	@NotBlank
 	@Size(max = 20)
 	@Schema(example = "WELADED2HER", description = "BIC")
@@ -37,24 +38,24 @@ public class PaymentDetails {
 	
 	
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "Kontoinhaber")
 	private Contact payer;
 	
 	
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "Zustimmung SEPA Lastschrift", example = "true")
 	private boolean directDebitConsent;
 	
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "Zustimmung Bonitätsprüfung", example = "true")
 	private boolean creditCheckConsent;
 	
 	
 	@Valid
-	@NonNull
+	@Nonnull
 	@Schema(description = "Art der Zahlung", example = "Invoice")
 	private PaymentOption payment;
 	

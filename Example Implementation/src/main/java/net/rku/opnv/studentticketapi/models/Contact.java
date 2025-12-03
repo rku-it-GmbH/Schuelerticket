@@ -2,15 +2,17 @@ package net.rku.opnv.studentticketapi.models;
 
 import java.time.LocalDate;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.PositiveOrZero;
-import javax.validation.constraints.Size;
 
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
+
+
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +24,7 @@ import net.rku.opnv.studentticketapi.models.enums.Sex;
 @Schema(description = "Kontaktdaten einer Person.")
 public class Contact {
 
-	@NonNull
+	@Nonnull
 	@Size(max = 120)
 	@Schema(description = "Nachname", example = "Müller")
 	private String lastname;
@@ -31,7 +33,7 @@ public class Contact {
 	@Schema(description = "ID im Schulsystem", example = "12345A99")
 	private String studentID;
 
-	@NonNull
+	@Nonnull
 	@Size(max = 80)
 	@Schema(description = "Vorname", example = "Marie")
 	private String firstname;
@@ -45,17 +47,17 @@ public class Contact {
 	@Schema(example = "2017-07-21", description = "Geburtsdatum")
 	private LocalDate birthday;
 
-	@NonNull
+	@Nonnull
 	@Schema(example = "male", description = "Geschlecht")
 	private Sex sex;
 
-	@NonNull
+	@Nonnull
 	@NotBlank
 	@Size(max = 55)
 	@Schema(description = "Straße", example = "Cloudstraße")
 	private String street;
 
-	@NonNull
+	@Nonnull
 	@NotBlank
 	@Size(max = 4 + 1 + 4)
 	@PositiveOrZero
@@ -77,13 +79,13 @@ public class Contact {
 	@Schema(description = "Postfach", example = "12 34 56")
 	private String pobox;
 
-	@NonNull
+	@Nonnull
 	@NotBlank
 	@Size(max = 5, min = 5)
 	@Schema(description = "PLZ - Postleitzahl", example = "44141")
 	private String postalcode;
 
-	@NonNull
+	@Nonnull
 	@NotBlank
 	@Size(max = 105)
 	@Schema(description = "Ort - Wohnort", example = "Dortmund")
