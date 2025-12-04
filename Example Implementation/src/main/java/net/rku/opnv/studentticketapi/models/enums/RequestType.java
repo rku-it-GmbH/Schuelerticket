@@ -2,19 +2,13 @@ package net.rku.opnv.studentticketapi.models.enums;
 
 import lombok.Getter;
 
-/**
- * Antragsart</br>
- * 
- * Auswahl: </br>
- * 001 Erstantrag </br>
- * 002 Folgeantrag </br>
- * 003 Änderungsantrag (Adresse, Wohnort, Bankdaten) </br>
- * 004 Kündigung
- */
+
 @Getter
 public enum RequestType {
 
-	Initial("001"), Followup("002"), Change("003"), Cancel("004"), Other("999");
+	Initial("101"), Followup("102"), Change_Payment("301"), Change_Address("302"), Change_School("302"), Cancel("400"),
+	Other("999");
+
 
 	private String value;
 

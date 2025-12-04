@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,18 +21,18 @@ public class SchoolInformation {
 	
 	@Valid
 	@Nullable
-	@Schema(description = "Alte/ehemalige Schule")
+	@Schema(description = "Vorherige Schule bei Schulwechsel")
 	private School oldSchool;
 	
 	@Valid
 	@Nonnull
-	@Schema(description = "Aktuelle/aufnehmende Schule")
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Aktuelle/aufnehmende Schule")
 	private School school;
 	
 	@Nonnull
 	@NotBlank
 	@Size(max=6)
-	@Schema(description = "Klasse/Jahrgangsstufe", example = "6A")
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Klasse/Jahrgangsstufe", example = "6A")
 	private String classNumber;
 	
 	@Nullable
@@ -39,8 +40,8 @@ public class SchoolInformation {
 	@Schema(description = "Bildungsgang", example = "Ausbildungsklasse Elektrotechnik")
 	private String courseOfEducation;
 	
-	@Nullable
-	@Schema(description = "Schulbescheinigung", example = "true")
+	@Nonnull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Schulbescheinigung liegt vor", example = "true")
 	private boolean schoolCertificateChecked;
 	
 	

@@ -3,13 +3,13 @@ package net.rku.opnv.studentticketapi.models.enums;
 import lombok.Getter;
 
 @Getter
-public enum Sex {
+public enum Medium {
 
-	unknown(0), male(1), female(2), diverse(3),  not_specified(4);
+	chipcard(1), app(2), paper(3);
 
 	private int value;
 
-	private Sex(int value) {
+	private Medium(int value) {
 		this.value = value;
 
 	}

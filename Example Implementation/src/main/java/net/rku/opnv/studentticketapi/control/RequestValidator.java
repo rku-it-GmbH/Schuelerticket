@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.time.Period;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 import net.rku.opnv.studentticketapi.exceptions.ValidationException;
 import net.rku.opnv.studentticketapi.models.Contact;
 import net.rku.opnv.studentticketapi.models.Request;
@@ -16,14 +16,14 @@ import net.rku.opnv.studentticketapi.models.Sibling;
 @Component
 public class RequestValidator {
 
-	public void validateRequest(final @NonNull Request rq) {
+	public void validateRequest(@Nonnull final Request rq) {
 		checkAllContactsAreValid(rq);
 		checkCustomerAge(rq);
 	}
 
-	private void checkCustomerAge(@NonNull final Request rq) {
+	private void checkCustomerAge(@Nonnull final Request rq) {
 		LocalDate curDate = LocalDate.now();
-		int age = Period.between(rq.getStudent().getBirthday(), curDate).getYears();
+		int age = Period.between(rq.getStudent().getBirthdate(), curDate).getYears();
 
 		if (age < 18 && rq.getRepresentative() == null) {
 			throw new ValidationException("Customers under the age of 18 need a Representative");
@@ -31,7 +31,7 @@ public class RequestValidator {
 
 	}
 
-	private void checkAllContactsAreValid(@NonNull final Request rq) {
+	private void checkAllContactsAreValid(@Nonnull final Request rq) {
 		checkContactValidity(rq.getStudent());
 		checkContactValidity(rq.getRepresentative());
 
@@ -52,7 +52,7 @@ public class RequestValidator {
 		}
 	}
 
-	private void checkPerson(@NonNull Contact c) {
+	private void checkPerson(@Nonnull Contact c) {
 		if (StringUtils.isBlank(c.getFirstname()))
 			throw new ValidationException("Firstname must be filled in Person");
 
@@ -66,7 +66,7 @@ public class RequestValidator {
 
 	}
 
-	private void checkAdress(@NonNull Contact c) {
+	private void checkAdress(@Nonnull Contact c) {
 
 		boolean poBox = StringUtils.isNotEmpty(c.getPobox());
 		boolean adressFields = StringUtils.isNoneEmpty(c.getStreet(), c.getStreetnumber(), c.getPostalcode());
