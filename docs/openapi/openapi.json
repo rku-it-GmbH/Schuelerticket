@@ -7,8 +7,8 @@
 			"name": "Lukas Sauerbier",
 			"url": "https://github.com/rku-it-GmbH/Schuelerticket",
 			"email": "lukas.sauerbier@rku-it.de",
-			"x-Company-URL": "https://rku-it.de",
-			"x-Company": "rku.it GmbH"
+			"x-Company": "rku.it GmbH",
+			"x-Company-URL": "https://rku-it.de"
 		},
 		"license": {
 			"name": "MIT License",
@@ -23,7 +23,7 @@
 		}
 	],
 	"paths": {
-		"/api": {
+		"/api/sendRequest": {
 			"post": {
 				"tags": [
 					"School Data API"
@@ -524,7 +524,8 @@
 					"personalContribution",
 					"reductionEntitled",
 					"requestDate",
-					"requestID"
+					"requestID",
+					"requestType"
 				]
 			},
 			"Consent": {
@@ -700,13 +701,8 @@
 					}
 				},
 				"required": [
-					"city",
 					"firstname",
-					"lastname",
-					"postalcode",
-					"sex",
-					"street",
-					"streetnumber"
+					"lastname"
 				]
 			},
 			"PaymentDetails": {
@@ -760,7 +756,6 @@
 				"required": [
 					"creditCheckConsent",
 					"directDebitConsent",
-					"payer",
 					"payment"
 				]
 			},
@@ -806,8 +801,6 @@
 				"required": [
 					"basicData",
 					"consent",
-					"schoolInformation",
-					"siblings",
 					"student",
 					"ticketInformation"
 				]
@@ -861,7 +854,6 @@
 				},
 				"required": [
 					"schoolId",
-					"schoolName",
 					"schoolType"
 				]
 			},
@@ -897,8 +889,8 @@
 					}
 				},
 				"required": [
-					"classNumber",
-					"school"
+					"school",
+					"schoolCertificateChecked"
 				]
 			},
 			"Sibling": {
@@ -1092,8 +1084,7 @@
 					}
 				},
 				"required": [
-					"requestID",
-					"status"
+					"requestID"
 				]
 			},
 			"RequestStatus": {
