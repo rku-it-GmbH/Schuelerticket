@@ -29,10 +29,9 @@ public class SchoolInformation {
 	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Aktuelle/aufnehmende Schule")
 	private School school;
 	
-	@Nonnull
-	@NotBlank
+	@Nullable
 	@Size(max=6)
-	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Klasse/Jahrgangsstufe", example = "6A")
+	@Schema(description = "Klasse/Jahrgangsstufe", example = "6A")
 	private String classNumber;
 	
 	@Nullable

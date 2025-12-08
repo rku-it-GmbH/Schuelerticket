@@ -37,8 +37,8 @@ public class PaymentDetails {
 	
 	
 	@Valid
-	@Nonnull
-	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Kontoinhaber")
+	@Nullable
+	@Schema(description = "Kontoinhaber")
 	private Contact payer;
 	
 	

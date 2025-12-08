@@ -26,10 +26,9 @@ public class School {
 	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Soweit bekannt, eindeutige ID der Schule", maxLength = 10, example = "61854")
 	private long schoolId;
 	
-	@Nonnull
-	@NotBlank
+	@Nullable
 	@Size(max=250)
-	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Name der Schule", example = "ABC Grundschule")
+	@Schema(description = "Name der Schule", example = "ABC Grundschule")
 	private String schoolName;
 	
 	@Nonnull

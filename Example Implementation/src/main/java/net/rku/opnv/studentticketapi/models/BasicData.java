@@ -11,6 +11,7 @@ import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import net.rku.opnv.studentticketapi.models.enums.PersonalContribution;
 import net.rku.opnv.studentticketapi.models.enums.RequestType;
 
@@ -51,6 +52,7 @@ public class BasicData {
 	private String note;
 
 	@Nonnull
+	@NonNull
 	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Antragsart", example = "Initial")
 	private RequestType requestType;
 

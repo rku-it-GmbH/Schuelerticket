@@ -47,8 +47,8 @@ public class ProcessedRequest {
 	@Schema(example = "1233738B2", description = "Abonummer der Person beim Verkehrsunter-nehmen (bei Folge-/Änderungsanträgen)")
 	private String subscriptionNumber;
 
-	@Nonnull
-    @Schema(requiredMode = RequiredMode.REQUIRED, enumAsRef = true, example = "approved", description = "Status des Antrags: \n" +
+	@Nullable
+    @Schema(enumAsRef = true, example = "approved", description = "Status des Antrags: \n" +
         "* `UNPROCESSED` - Unprocessed (noch nicht verarbeitet)\n" +
         "* `ERROR` - error (Fehler bei der Verarbeitung)\n" +
         "* `APPROVED` - approved (Antrag angenommen)\n" +

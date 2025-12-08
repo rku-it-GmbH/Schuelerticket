@@ -58,7 +58,7 @@ public class SchooldataapiRequests {
 			@ApiResponse(responseCode = "504", description = "Gateway Timeout"), })
 	@Schema(description = "Send School Data")
 	@Operation(summary = "Übertragen eines Datensatzes an das Verkehrsunternehmen")
-	@RequestMapping(value = "/api", 
+	@RequestMapping(value = "/api/sendRequest", 
 					method = RequestMethod.POST, 
 					consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, 
 					produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })

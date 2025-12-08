@@ -57,21 +57,19 @@ public class Contact {
 	@Schema(example = "2017-07-21", description = "Geburtsdatum. Das Geburtsdatum des Schülers wird für die Fahrtberechtigung benötigt, sofern der Tarif dies vorsieht.")
 	private LocalDate birthdate;
 
-	@Nonnull
-	@Schema(requiredMode = RequiredMode.REQUIRED, example = "male", description = "Geschlecht. Das Geschlecht des Schülers wird für die Fahrt-berechtigung benötigt, sofern der Tarif dies vorsieht")
+	@Nullable
+	@Schema(requiredMode = RequiredMode.NOT_REQUIRED, example = "male", description = "Geschlecht. Das Geschlecht des Schülers wird für die Fahrt-berechtigung benötigt, sofern der Tarif dies vorsieht")
 	private Sex sex;
 
-	@Nonnull
-	@NotBlank
+	@Nullable
 	@Size(max = 55)
-	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Straße", example = "Cloudstraße")
+	@Schema(requiredMode = RequiredMode.NOT_REQUIRED, description = "Straße", example = "Cloudstraße")
 	private String street;
 
-	@Nonnull
-	@NotBlank
+	@Nullable
 	@Size(max = 4 + 1 + 4)
 	@PositiveOrZero
-	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Hausnummer", example = "22", maxLength = 9)
+	@Schema(requiredMode = RequiredMode.NOT_REQUIRED, description = "Hausnummer", example = "22", maxLength = 9)
 	private String streetnumber;
 
 	@Nullable
@@ -89,20 +87,17 @@ public class Contact {
 	@Schema(description = "Postfach", example = "12 34 56")
 	private String pobox;
 
-	@Nonnull
-	@NotBlank
+	@Nullable
 	@Size(max = 5, min = 5)
-	@Schema(requiredMode = RequiredMode.REQUIRED, description = "PLZ - Postleitzahl", example = "44141")
+	@Schema(requiredMode = RequiredMode.NOT_REQUIRED, description = "PLZ - Postleitzahl", example = "44141")
 	private String postalcode;
 
-	@Nonnull
-	@NotBlank
-	@Size(max = 105)
-	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Ort - Wohnort", example = "Dortmund")
-	private String city;
-
 	@Nullable
-	@Schema(description = "Ortsteil bei ausländischem Wohnort", example = "Lütgendortmund")
+	@Size(max = 105)
+	@Schema(requiredMode = RequiredMode.NOT_REQUIRED, description = "Ort - Wohnort", example = "Dortmund")
+	private String city;
+	@Nullable
+	@Schema(requiredMode = RequiredMode.NOT_REQUIRED, description = "Ortsteil bei ausländischem Wohnort", example = "Lütgendortmund")
 	private String district;
 	
 	

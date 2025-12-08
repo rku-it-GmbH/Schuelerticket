@@ -53,15 +53,15 @@ public class Request {
 	private Consent consent;
 
 	@Valid
-	@Nonnull
-	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Informationen zur Schule, die der Schüler besucht")
+	@Nullable
+	@Schema(description = "Informationen zur Schule, die der Schüler besucht")
 	private SchoolInformation schoolInformation;
 
 
 
 	@Valid
-	@Nonnull
-	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Geschwister des Schülers\r\n" + 
+	@Nullable
+	@Schema(description = "Geschwister des Schülers\r\n" + 
 				"Diese Daten sind für die Prüfung auf anspruchs-berechtigte Geschwister nötig. \r\n" + 
 				"Grundsätzlich sind die Schulträger für die Prüfung verantwortlich. Diese wird aber meist nur bei kommunalen Trägern und nur für die eigenen Schulen durchgeführt (und nicht für andere Schulträger oder Kommunen). \r\n" +
 				"Die Angabe ist nur erforderlich, falls das Ver-kehrsunternehmen selbst eine Prüfung der Ge-chwister durchführt. \r\n")
