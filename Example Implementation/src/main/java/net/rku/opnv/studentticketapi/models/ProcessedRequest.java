@@ -34,17 +34,17 @@ public class ProcessedRequest {
 	
 	@Nullable
 	// @Size(max = 64)
-	@Schema(example = "1233738B2", description = "Kundennummer der Person beim Verkehrsun-ternehmen (bei Folge-/Änderungsanträgen)")
+	@Schema(example = "1233738B2", description = "Kundennummer der Person beim Verkehrsunternehmen (bei Folge-/Änderungsanträgen)")
 	private String customerNumber;
 
 	@Nullable
 	// @Size(max = 64)
-	@Schema(example = "1233738B2", description = "Vertragsnummer der Person beim Verkehrsun-ternehmen (bei Folge-/Änderungsanträgen)")
+	@Schema(example = "1233738B2", description = "Vertragsnummer der Person beim Verkehrsunternehmen (bei Folge-/Änderungsanträgen)")
 	private String contractNumber;
 
 	@Nullable
 	// @Size(max = 64)
-	@Schema(example = "1233738B2", description = "Abonummer der Person beim Verkehrsunter-nehmen (bei Folge-/Änderungsanträgen)")
+	@Schema(example = "1233738B2", description = "Abonummer der Person beim Verkehrsunternehmen (bei Folge-/Änderungsanträgen)")
 	private String subscriptionNumber;
 
 	@Nullable
@@ -53,7 +53,7 @@ public class ProcessedRequest {
         "* `ERROR` - error (Fehler bei der Verarbeitung)\n" +
         "* `APPROVED` - approved (Antrag angenommen)\n" +
         "* `DENIED` - denied (Antrag abgelehnt)\n" +
-        "* `NEEDS_REVISION` - needs_revision (muss überarbeitet wer-den)\n" +
+        "* `NEEDS_REVISION` - needs_revision (muss überarbeitet werden)\n" +
         "* `OTHER` - other (anderes)")
 	private RequestStatus status;
 

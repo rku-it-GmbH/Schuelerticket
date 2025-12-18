@@ -36,9 +36,9 @@ public class Request {
 
 	@Valid
 	@Nullable
-	@Schema(description = "Kontaktdaten des gesetzlichen Vertreters des Schülers ([Erziehungsberechtig-ter/Sorgeberechtigter/Vormund]) \r\n" +
-				"Bei minderjährigen Schülern ist die Angabe eines gesetzlichen Vertreters verpflichtend. \r\n" +
-				"Bei geteiltem Sorgerecht benötigt das Verkehrs-unternehmen einen eindeutigen Ansprechpart-ner. Es kann darum nur ein gesetzlicher Vertreter angegeben werden." )
+	@Schema(description = "Kontaktdaten des gesetzlichen Vertreters des Schülers (Erziehungsberechtigter/Sorgeberechtigter/Vormund). " +
+				"Bei minderjährigen Schülern ist die Angabe eines gesetzlichen Vertreters verpflichtend. " +
+				"Bei geteiltem Sorgerecht benötigt das Verkehrsunternehmen einen eindeutigen Ansprechpartner. Es kann darum nur ein gesetzlicher Vertreter angegeben werden." )
 	private Contact representative;
 	
 	@Valid
@@ -61,10 +61,10 @@ public class Request {
 
 	@Valid
 	@Nullable
-	@Schema(description = "Geschwister des Schülers\r\n" + 
-				"Diese Daten sind für die Prüfung auf anspruchs-berechtigte Geschwister nötig. \r\n" + 
-				"Grundsätzlich sind die Schulträger für die Prüfung verantwortlich. Diese wird aber meist nur bei kommunalen Trägern und nur für die eigenen Schulen durchgeführt (und nicht für andere Schulträger oder Kommunen). \r\n" +
-				"Die Angabe ist nur erforderlich, falls das Ver-kehrsunternehmen selbst eine Prüfung der Ge-chwister durchführt. \r\n")
+	@Schema(description = "Geschwister des Schülers." + 
+				"Diese Daten sind für die Prüfung auf anspruchsberechtigte Geschwister nötig. " + 
+				"Grundsätzlich sind die Schulträger für die Prüfung verantwortlich. Diese wird aber meist nur bei kommunalen Trägern und nur für die eigenen Schulen durchgeführt (und nicht für andere Schulträger oder Kommunen). " +
+				"Die Angabe ist nur erforderlich, falls das Verkehrsunternehmen selbst eine Prüfung der Geschwister durchführt.")
 	private List<Sibling> siblings;
 
 }

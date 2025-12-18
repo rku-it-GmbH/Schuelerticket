@@ -38,17 +38,17 @@ public class Contact {
 
 	@Nullable
 	@Size(max = 64)
-	@Schema(example = "1233738B2", description = "Kundennummer des Schülers beim Verkehrsun-ternehmen falls bekannt (bei Folge-/Änderungsanträgen)")
+	@Schema(example = "1233738B2", description = "Kundennummer des Schülers beim Verkehrsunternehmen falls bekannt (bei Folge-/Änderungsanträgen)")
 	private String customerNumber;
 
 	@Nullable
 	// @Size(max = 64)
-	@Schema(example = "1233738B2", description = "Vertragsnummer des Schülers beim falls be-kannt (bei Folge-/Änderungsanträgen)")
+	@Schema(example = "1233738B2", description = "Vertragsnummer des Schülers beim falls bekannt (bei Folge-/Änderungsanträgen)")
 	private String contractNumber;
 
 	@Nullable
 	// @Size(max = 64)
-	@Schema(example = "1233738B2", description = "Abonummer des Schülers beim Verkehrsunter-nehmen falls bekannt (bei Folge-/Änderungsanträgen)")
+	@Schema(example = "1233738B2", description = "Abonummer des Schülers beim Verkehrsunternehmen falls bekannt (bei Folge-/Änderungsanträgen)")
 	private String subscriptionNumber;
 
 
@@ -58,7 +58,7 @@ public class Contact {
 	private LocalDate birthdate;
 
 	@Nullable
-	@Schema(requiredMode = RequiredMode.NOT_REQUIRED, example = "male", description = "Geschlecht. Das Geschlecht des Schülers wird für die Fahrt-berechtigung benötigt, sofern der Tarif dies vorsieht")
+	@Schema(requiredMode = RequiredMode.NOT_REQUIRED, example = "male", description = "Geschlecht. Das Geschlecht des Schülers wird für die Fahrtberechtigung benötigt, sofern der Tarif dies vorsieht")
 	private Sex sex;
 
 	@Nullable

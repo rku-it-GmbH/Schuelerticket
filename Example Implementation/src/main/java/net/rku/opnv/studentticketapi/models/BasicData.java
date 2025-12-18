@@ -48,7 +48,7 @@ public class BasicData {
 
 	@Nullable
 	// @Size(max = 500)
-	@Schema(description = "Notiz des Schulträgers an das Verkehrsunter-nehmen. Nur mit Merkmalen, die das Vertrags-verhältnis betreffen auszufüllen. \r\n Anmerkungen zum Antrag können hier als Frei-text festgehalten werden", example = "Bitte erneut prüfen")
+	@Schema(description = "Notiz des Schulträgers an das Verkehrsunternehmen. Nur mit Merkmalen, die das Vertragsverhältnis betreffen auszufüllen. Anmerkungen zum Antrag können hier als Freitext festgehalten werden", example = "Bitte erneut prüfen")
 	private String note;
 
 	@Nonnull
