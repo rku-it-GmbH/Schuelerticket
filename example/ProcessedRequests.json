@@ -1,0 +1,14 @@
+[
+    {
+        "requestID": "EA-2025-12345",
+        "product": "Deutschlandticket Schule",
+        "productNumber": "9995",
+        "price": 29.00,
+        "customerNumber": "CUST-12345",
+        "contractNumber": "CONT-67890",
+        "subscriptionNumber": "SUB-54321",
+        "status": "approved",
+        "note": "Erstantrag wurde genehmigt.",
+        "errors": {}
+    }
+]
