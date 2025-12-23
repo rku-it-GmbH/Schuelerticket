@@ -14,7 +14,7 @@
 			"name": "MIT License",
 			"url": "https://github.com/rku-it-GmbH/Schuelerticket/blob/main/LICENSE"
 		},
-		"version": "v0.8.1"
+		"version": "v1.0.0"
 	},
 	"servers": [
 		{
@@ -476,7 +476,7 @@
 					},
 					"sender": {
 						"type": "string",
-						"description": "Sender des Antrags. Das ist in der Regel der Schulträger. Empfohlen wird die Nutzung der Schulträgerdaten, die das Schulministerium NRW als Open-Date bereitstellt",
+						"description": "Sender des Antrags. Das ist in der Regel der Schulträger. Empfohlen wird die Nutzung der Schulträgerdaten, die das Schulministerium NRW als Open-Data bereitstellt",
 						"example": "Schulamt Gelsenkirchen"
 					},
 					"requestID": {
@@ -502,7 +502,7 @@
 					},
 					"note": {
 						"type": "string",
-						"description": "Notiz des Schulträgers an das Verkehrsunter-nehmen. Nur mit Merkmalen, die das Vertrags-verhältnis betreffen auszufüllen. \r\n Anmerkungen zum Antrag können hier als Frei-text festgehalten werden",
+						"description": "Notiz des Schulträgers an das Verkehrsunternehmen. Nur mit Merkmalen, die das Vertragsverhältnis betreffen auszufüllen. Anmerkungen zum Antrag können hier als Freitext festgehalten werden",
 						"example": "Bitte erneut prüfen"
 					},
 					"requestType": {
@@ -597,19 +597,19 @@
 					},
 					"customerNumber": {
 						"type": "string",
-						"description": "Kundennummer des Schülers beim Verkehrsun-ternehmen falls bekannt (bei Folge-/Änderungsanträgen)",
+						"description": "Kundennummer des Schülers beim Verkehrsunternehmen falls bekannt (bei Folge-/Änderungsanträgen)",
 						"example": "1233738B2",
 						"maxLength": 64,
 						"minLength": 0
 					},
 					"contractNumber": {
 						"type": "string",
-						"description": "Vertragsnummer des Schülers beim falls be-kannt (bei Folge-/Änderungsanträgen)",
+						"description": "Vertragsnummer des Schülers beim falls bekannt (bei Folge-/Änderungsanträgen)",
 						"example": "1233738B2"
 					},
 					"subscriptionNumber": {
 						"type": "string",
-						"description": "Abonummer des Schülers beim Verkehrsunter-nehmen falls bekannt (bei Folge-/Änderungsanträgen)",
+						"description": "Abonummer des Schülers beim Verkehrsunternehmen falls bekannt (bei Folge-/Änderungsanträgen)",
 						"example": "1233738B2"
 					},
 					"birthdate": {
@@ -620,7 +620,7 @@
 					},
 					"sex": {
 						"type": "string",
-						"description": "Geschlecht. Das Geschlecht des Schülers wird für die Fahrt-berechtigung benötigt, sofern der Tarif dies vorsieht",
+						"description": "Geschlecht. Das Geschlecht des Schülers wird für die Fahrtberechtigung benötigt, sofern der Tarif dies vorsieht",
 						"enum": [
 							"unknown",
 							"male",
@@ -776,7 +776,7 @@
 					},
 					"representative": {
 						"$ref": "#/components/schemas/Contact",
-						"description": "Kontaktdaten des gesetzlichen Vertreters des Schülers ([Erziehungsberechtig-ter/Sorgeberechtigter/Vormund]) \r\nBei minderjährigen Schülern ist die Angabe eines gesetzlichen Vertreters verpflichtend. \r\nBei geteiltem Sorgerecht benötigt das Verkehrs-unternehmen einen eindeutigen Ansprechpart-ner. Es kann darum nur ein gesetzlicher Vertreter angegeben werden."
+						"description": "Kontaktdaten des gesetzlichen Vertreters des Schülers (Erziehungsberechtigter/Sorgeberechtigter/Vormund). Bei minderjährigen Schülern ist die Angabe eines gesetzlichen Vertreters verpflichtend. Bei geteiltem Sorgerecht benötigt das Verkehrsunternehmen einen eindeutigen Ansprechpartner. Es kann darum nur ein gesetzlicher Vertreter angegeben werden."
 					},
 					"paymentDetails": {
 						"$ref": "#/components/schemas/PaymentDetails",
@@ -792,7 +792,7 @@
 					},
 					"siblings": {
 						"type": "array",
-						"description": "Geschwister des Schülers\r\nDiese Daten sind für die Prüfung auf anspruchs-berechtigte Geschwister nötig. \r\nGrundsätzlich sind die Schulträger für die Prüfung verantwortlich. Diese wird aber meist nur bei kommunalen Trägern und nur für die eigenen Schulen durchgeführt (und nicht für andere Schulträger oder Kommunen). \r\nDie Angabe ist nur erforderlich, falls das Ver-kehrsunternehmen selbst eine Prüfung der Ge-chwister durchführt. \r\n",
+						"description": "Geschwister des Schülers.Diese Daten sind für die Prüfung auf anspruchsberechtigte Geschwister nötig. Grundsätzlich sind die Schulträger für die Prüfung verantwortlich. Diese wird aber meist nur bei kommunalen Trägern und nur für die eigenen Schulen durchgeführt (und nicht für andere Schulträger oder Kommunen). Die Angabe ist nur erforderlich, falls das Verkehrsunternehmen selbst eine Prüfung der Geschwister durchführt.",
 						"items": {
 							"$ref": "#/components/schemas/Sibling"
 						}
@@ -1052,22 +1052,22 @@
 					},
 					"customerNumber": {
 						"type": "string",
-						"description": "Kundennummer der Person beim Verkehrsun-ternehmen (bei Folge-/Änderungsanträgen)",
+						"description": "Kundennummer der Person beim Verkehrsunternehmen (bei Folge-/Änderungsanträgen)",
 						"example": "1233738B2"
 					},
 					"contractNumber": {
 						"type": "string",
-						"description": "Vertragsnummer der Person beim Verkehrsun-ternehmen (bei Folge-/Änderungsanträgen)",
+						"description": "Vertragsnummer der Person beim Verkehrsunternehmen (bei Folge-/Änderungsanträgen)",
 						"example": "1233738B2"
 					},
 					"subscriptionNumber": {
 						"type": "string",
-						"description": "Abonummer der Person beim Verkehrsunter-nehmen (bei Folge-/Änderungsanträgen)",
+						"description": "Abonummer der Person beim Verkehrsunternehmen (bei Folge-/Änderungsanträgen)",
 						"example": "1233738B2"
 					},
 					"status": {
 						"$ref": "#/components/schemas/RequestStatus",
-						"description": "Status des Antrags: \n* `UNPROCESSED` - Unprocessed (noch nicht verarbeitet)\n* `ERROR` - error (Fehler bei der Verarbeitung)\n* `APPROVED` - approved (Antrag angenommen)\n* `DENIED` - denied (Antrag abgelehnt)\n* `NEEDS_REVISION` - needs_revision (muss überarbeitet wer-den)\n* `OTHER` - other (anderes)",
+						"description": "Status des Antrags: \n* `UNPROCESSED` - Unprocessed (noch nicht verarbeitet)\n* `ERROR` - error (Fehler bei der Verarbeitung)\n* `APPROVED` - approved (Antrag angenommen)\n* `DENIED` - denied (Antrag abgelehnt)\n* `NEEDS_REVISION` - needs_revision (muss überarbeitet werden)\n* `OTHER` - other (anderes)",
 						"example": "approved"
 					},
 					"note": {

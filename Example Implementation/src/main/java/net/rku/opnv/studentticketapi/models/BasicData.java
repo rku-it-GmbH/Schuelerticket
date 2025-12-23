@@ -31,7 +31,7 @@ public class BasicData {
 	private Date processingDate;
 
 	@Nullable
-	@Schema(description = "Sender des Antrags. Das ist in der Regel der Schulträger. Empfohlen wird die Nutzung der Schulträgerdaten, die das Schulministerium NRW als Open-Date bereitstellt", example = "Schulamt Gelsenkirchen")
+	@Schema(description = "Sender des Antrags. Das ist in der Regel der Schulträger. Empfohlen wird die Nutzung der Schulträgerdaten, die das Schulministerium NRW als Open-Data bereitstellt", example = "Schulamt Gelsenkirchen")
 	private String sender;
 
 	@Nonnull
