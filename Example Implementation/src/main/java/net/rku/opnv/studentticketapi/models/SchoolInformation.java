@@ -1,13 +1,13 @@
 package net.rku.opnv.studentticketapi.models;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,16 +21,15 @@ public class SchoolInformation {
 	
 	@Valid
 	@Nullable
-	@Schema(description = "Alte/ehemalige Schule")
+	@Schema(description = "Vorherige Schule bei Schulwechsel")
 	private School oldSchool;
 	
 	@Valid
-	@NonNull
-	@Schema(description = "Aktuelle/aufnehmende Schule")
+	@Nonnull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Aktuelle/aufnehmende Schule")
 	private School school;
 	
-	@NonNull
-	@NotBlank
+	@Nullable
 	@Size(max=6)
 	@Schema(description = "Klasse/Jahrgangsstufe", example = "6A")
 	private String classNumber;
@@ -40,8 +39,8 @@ public class SchoolInformation {
 	@Schema(description = "Bildungsgang", example = "Ausbildungsklasse Elektrotechnik")
 	private String courseOfEducation;
 	
-	@Nullable
-	@Schema(description = "Schulbescheinigung", example = "true")
+	@Nonnull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Schulbescheinigung liegt vor", example = "true")
 	private boolean schoolCertificateChecked;
 	
 	

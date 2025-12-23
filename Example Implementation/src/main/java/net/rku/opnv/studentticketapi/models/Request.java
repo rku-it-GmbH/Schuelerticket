@@ -2,12 +2,12 @@ package net.rku.opnv.studentticketapi.models;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.validation.Valid;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,48 +19,52 @@ import lombok.NoArgsConstructor;
 public class Request {
 
 	@Valid
-	@NonNull
-	@Schema(description = "Basisdaten des Antrags")
+	@Nonnull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Basisdaten des Antrags")
 	private BasicData basicData;
 	
 	@Valid
-	@NonNull
-	@Schema(description = "Informationen zum Ticket")
+	@Nonnull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Informationen die für die Ausstellung des Tickets benötigt werden")
 	private TicketInformation ticketInformation;
 
 
 	@Valid
-	@NonNull
-	@Schema(description = "Dieses Element enthält die Daten zum Kunden (Schüler/Abonnent)")
+	@Nonnull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Kontaktdaten des Schülers")
 	private Contact student;
 
 	@Valid
 	@Nullable
-	@Schema(description = "Angaben zum gesetzlichen Vertreter - Das Element muss dann verpflichtend übergeben werden, wenn der Kunde minderjährig ist.")
+	@Schema(description = "Kontaktdaten des gesetzlichen Vertreters des Schülers (Erziehungsberechtigter/Sorgeberechtigter/Vormund). " +
+				"Bei minderjährigen Schülern ist die Angabe eines gesetzlichen Vertreters verpflichtend. " +
+				"Bei geteiltem Sorgerecht benötigt das Verkehrsunternehmen einen eindeutigen Ansprechpartner. Es kann darum nur ein gesetzlicher Vertreter angegeben werden." )
 	private Contact representative;
 	
 	@Valid
 	@Nullable
-	@Schema(description = "Dieser Datensatz ist optional, da der Antragsteller nicht zur Angabe ggü. der Stadt Dortmund verpflichtet werden kann. Wird der Datensatz jedoch geliefert (freiwillige Angabe des Antrag-stellers), sind bestimmte Elemente verpflichtend")
+	@Schema(description = "Informationen zur Zahlung des Tickets")
 	private PaymentDetails paymentDetails;
 	
 	
 	@Valid
-	@NonNull
-	@Schema(description = "Verschiedene Einwilligungen")
+	@Nonnull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Diverse Einwilligungen des Schülers/gesetzlichen Vertreters")
 	private Consent consent;
 
 	@Valid
-	@NonNull
-	@Schema(description = "In diesem Element werden die Daten zur aufnehmenden und ggf. zur alten Schule überge-ben")
+	@Nullable
+	@Schema(description = "Informationen zur Schule, die der Schüler besucht")
 	private SchoolInformation schoolInformation;
 
 
 
 	@Valid
-	@NonNull
-	@Schema(description = "Angaben von Geschwisterkindern zur Festlegung des Eigenanteils."
-			+ " Dieser Datensatz entfällt, wenn keine Geschwisterbeziehungen angegeben wurden. Dann wird ein leeres Array erwartet.")
+	@Nullable
+	@Schema(description = "Geschwister des Schülers." + 
+				"Diese Daten sind für die Prüfung auf anspruchsberechtigte Geschwister nötig. " + 
+				"Grundsätzlich sind die Schulträger für die Prüfung verantwortlich. Diese wird aber meist nur bei kommunalen Trägern und nur für die eigenen Schulen durchgeführt (und nicht für andere Schulträger oder Kommunen). " +
+				"Die Angabe ist nur erforderlich, falls das Verkehrsunternehmen selbst eine Prüfung der Geschwister durchführt.")
 	private List<Sibling> siblings;
 
 }

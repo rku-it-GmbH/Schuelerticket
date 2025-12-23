@@ -1,55 +1,65 @@
 package net.rku.opnv.studentticketapi.models;
 
 import java.time.LocalDate;
-
-import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Size;
-
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
+import java.util.Date;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import net.rku.opnv.studentticketapi.models.enums.PersonalContribution;
 import net.rku.opnv.studentticketapi.models.enums.RequestType;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "Basisdaten zum Antrag - In diesem Element werden alle Basisdaten des Antrages übergeben, z.B. der gewünschte Gültigkeitsbeginn des Tickets.")
+@Schema(description = "Basisdaten zum Antrag - In diesem Element werden alle Basisdaten des Antrages übergeben, z.B. der gewünschte Gültigkeitsbeginn des Tickets")
 public class BasicData {
 
-	@NonNull
+	@Nonnull
 	@PastOrPresent
-	@Schema(description = "Antragsdatum", example = "2022-07-21")
-	private LocalDate requestDate;
-
-
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Datum an dem der Antrag durch den Antragsteller gestellt wurde", example = "2022-07-21")
+	private Date requestDate;
 
 	@Nullable
-	@Schema(description = "Antragsart", example = "Initial")
-	private RequestType reason;
+	@Schema(description = "Datum, an dem der Antrag durch den Schulträger bearbeitet bzw. entschieden wurde", example = "2022-07-21")
+	private Date processingDate;
 
 	@Nullable
-	@Schema(description = "Antragsnummer", example = "123456")
-	private long requestNumber;
+	@Schema(description = "Sender des Antrags. Das ist in der Regel der Schulträger. Empfohlen wird die Nutzung der Schulträgerdaten, die das Schulministerium NRW als Open-Data bereitstellt", example = "Schulamt Gelsenkirchen")
+	private String sender;
 
-	@Nullable
-	@Size(max = 254)
-	@Schema(description = "Antragsgrund Beschreibung, wenn „sonstiges“ gewählt", example = "Die Schule ist umgezogen")
-	private String reasonDescription;
+	@Nonnull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Antragsnummer aus dem Schulträgersystem", example = "123456A9")
+	private String requestID;
 
-	@NonNull
-	@Schema(description = "Zustimmung Tarifgrundlagen erteilt", example = "true")
-	private boolean acceptTransportTerms;
-
-	@NonNull
-	@Schema(description = "Besteht ein Anspruch auf Ermäßigung", example = "true")
+	@Nonnull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Besteht ein Anspruch auf Ermäßigung", example = "true")
 	private boolean reductionEntitled;
 
-	@Nullable
-	@Schema(description = "Eigenanteil", example = "High")
+	@Nonnull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Eigenanteil", example = "High")
 	private PersonalContribution personalContribution;
+
+	@Nullable
+	// @Size(max = 500)
+	@Schema(description = "Notiz des Schulträgers an das Verkehrsunternehmen. Nur mit Merkmalen, die das Vertragsverhältnis betreffen auszufüllen. Anmerkungen zum Antrag können hier als Freitext festgehalten werden", example = "Bitte erneut prüfen")
+	private String note;
+
+	@Nonnull
+	@NonNull
+	@Schema(requiredMode = RequiredMode.REQUIRED, description = "Antragsart", example = "Initial")
+	private RequestType requestType;
+
+
+
+
+
+
+
 }

@@ -6,8 +6,15 @@ spring:
       accept-case-insensitive-enums: true
       accept-case-insensitive-properties: true
       accept-case-insensitive-values: true
+  web:
+    error:
+      include-stacktrace: NEVER
+      include-message: ALWAYS
+      include-binding-errors: ALWAYS
+      include-exception: FALSE
+  main:
+    allow-circular-references: true
 
-spring.main.allow-circular-references: true
 
 
 
@@ -15,12 +22,9 @@ server:
   port: ${server_port:8080}
   servlet:
     context-path: /studentticketapi
-  error:
-    include-stacktrace: NEVER
-    include-message: ALWAYS
-    include-binding-errors: ALWAYS
-    include-exception: FALSE
   forward-headers-strategy: FRAMEWORK
+
+  
   
 
 

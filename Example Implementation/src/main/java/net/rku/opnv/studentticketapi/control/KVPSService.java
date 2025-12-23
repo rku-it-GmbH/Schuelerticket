@@ -8,7 +8,7 @@ import net.rku.opnv.studentticketapi.models.Request;
 public class KVPSService {
 
 	public void sendData(Request rq) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
