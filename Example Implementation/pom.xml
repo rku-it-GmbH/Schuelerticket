@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>net.rku.opnv</groupId>
 	<artifactId>studentticketapi</artifactId>
-	<version>0.7.0</version>
+	<version>1.0.0</version>
 	<name>studentticketapi</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
